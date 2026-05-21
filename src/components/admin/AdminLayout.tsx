@@ -5,14 +5,8 @@ import { BarChart3, Home, MapPin, Users, Briefcase, FileText, Mail, LogOut, Menu
 import Link from 'next/link'
 
 const navItems = [
-  { href: '/zh-CN/admin/dashboard', label: '仪表盘', icon: BarChart3 },
-  { href: '/zh-CN/admin/stats', label: '业绩数据', icon: BarChart3 },
-  { href: '/zh-CN/admin/home', label: '首页内容', icon: Home },
-  { href: '/zh-CN/admin/branches', label: '分支机构', icon: MapPin },
-  { href: '/zh-CN/admin/team', label: '团队管理', icon: Users },
-  { href: '/zh-CN/admin/services', label: '服务管理', icon: Briefcase },
-  { href: '/zh-CN/admin/cases', label: '案例管理', icon: FileText },
-  { href: '/zh-CN/admin/contact', label: '联系方式', icon: Mail },
+  { href: '/admin/dashboard', label: '仪表盘', icon: BarChart3 },
+  { href: '/admin/editor', label: '内容编辑', icon: FileText },
 ]
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
@@ -35,12 +29,12 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
   function logout() {
     localStorage.removeItem('admin_token')
-    window.location.href = '/zh-CN/admin'
+    window.location.href = '/admin'
   }
 
   if (loading) return <div className="min-h-screen bg-[var(--background)] flex items-center justify-center"><div className="text-[var(--foreground)]/50">加载中...</div></div>
   if (!authed) {
-    if (typeof window !== 'undefined') window.location.href = '/zh-CN/admin'
+    if (typeof window !== 'undefined') window.location.href = '/admin'
     return null
   }
 
