@@ -31,7 +31,7 @@ export default function Navbar({ locale, dict, brandName }: NavbarProps) {
             <span className="w-8 h-8 rounded-lg bg-gradient-to-br from-[var(--primary)] to-[var(--accent)] flex items-center justify-center text-white text-sm">
               J
             </span>
-            <span className="hidden sm:inline gradient-text">{brandName}</span>
+            <span className="gradient-text text-sm sm:text-lg">{brandName}</span>
           </Link>
 
           {/* Desktop nav */}
