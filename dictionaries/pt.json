@@ -1,0 +1,22 @@
+{
+  "nav": { "home": "Início", "about": "Sobre", "services": "Serviços", "cases": "Casos", "hardware": "Hardware", "contact": "Contato" },
+  "hero": { "title": "Arm Every Team with Intelligence", "subtitle": "Soluções empresariais de inteligência impulsionadas por IA", "cta": "Consulta gratuita" },
+  "pages": {
+    "aboutSubtitle": "Jeff AI — Arm every team with intelligence",
+    "aboutBranches": "Escritórios globais", "aboutTeam": "Equipe principal",
+    "servicesSubtitle": "Do diagnóstico à implementação, serviços profissionais de IA cobrindo todo o ciclo de automação",
+    "casesSubtitle": "Veja como ajudamos empresas de diversos setores a alcançar a transformação inteligente",
+    "hardware": "Consultor de Hardware", "hardwareSubtitle": "Conte-nos seus requisitos, hardware ou orçamento — encontraremos a solução ideal",
+    "hardwarePlaceholder": "Ex: Quero usar Qwen 72B / Tenho uma RTX 4090 / Orçamento $3K para IA...",
+    "hardwareAnalyze": "Analisar", "hardwareTry": "Tente:", "hardwareHints": ["Qwen 72B", "RTX 4090", "Sem GPU?", "Orçamento $1K"],
+    "contactSubtitle": "Conte-nos suas necessidades — respondemos em 24 horas",
+    "contactName": "Nome", "contactCompany": "Empresa", "contactEmail": "E-mail", "contactMessage": "Descreva suas necessidades",
+    "contactSend": "Enviar", "contactSent": "Mensagem enviada", "contactSentHint": "Entraremos em contato em breve",
+    "contactEmailLabel": "E-mail", "contactWechatLabel": "WeChat", "contactWechatHint": "Adicione nosso WeCom para suporte",
+    "contactRegionsLabel": "Regiões", "contactRegionsText": "Nanquim · Shenzhen · Hong Kong · Pequim · Singapura",
+    "contactRemoteText": "Atendimento remoto disponível, serviço nacional e internacional"
+  },
+  "aiPet": { "greeting": "Olá! Sou Jeffy, seu assistente IA. Como posso ajudar?", "placeholder": "Conte-me suas necessidades...", "thinking": "Pensando..." },
+  "footer": { "copyright": "© 2026 Jeff AI. Todos os direitos reservados.", "tagline": "Arm every team with intelligence" },
+  "common": { "learnMore": "Saiba mais", "contactUs": "Fale conosco", "getStarted": "Começar", "viewAll": "Ver tudo" }
+}

@@ -1,0 +1,22 @@
+{
+  "nav": { "home": "首頁", "about": "關於我們", "services": "服務", "cases": "案例", "hardware": "硬體適配", "contact": "聯絡我們" },
+  "hero": { "title": "用智能武裝每一個團隊", "subtitle": "AI 驅動的企業智能化解决方案", "cta": "預約免費諮詢" },
+  "pages": {
+    "aboutSubtitle": "解負智能，用智能武裝每一個團隊",
+    "aboutBranches": "全球分支機構", "aboutTeam": "核心團隊",
+    "servicesSubtitle": "從診斷到落地，覆蓋 AI 智能化全流程的專業服務",
+    "casesSubtitle": "看看我們如何幫助不同行業的企業實現智能化升級",
+    "hardware": "硬體適配顧問", "hardwareSubtitle": "告訴我們你的需求、設備或預算，我們幫你找到最優方案",
+    "hardwarePlaceholder": "例如：我想用 Qwen 72B 做客服 / 我有一台 RTX 4090 / 預算 2 萬想部署智能體...",
+    "hardwareAnalyze": "分析", "hardwareTry": "試試：", "hardwareHints": ["Qwen 72B", "RTX 4090", "沒顯卡能跑嗎", "預算1萬"],
+    "contactSubtitle": "告訴我們你的需求與痛點，我們將在 24 小時內回覆",
+    "contactName": "姓名", "contactCompany": "公司", "contactEmail": "電子郵件", "contactMessage": "描述你的需求",
+    "contactSend": "發送訊息", "contactSent": "訊息已發送", "contactSentHint": "我們會盡快與您聯絡",
+    "contactEmailLabel": "電子郵件", "contactWechatLabel": "微信", "contactWechatHint": "加入企業微信獲取即時支援",
+    "contactRegionsLabel": "服務區域", "contactRegionsText": "南京 · 深圳 · 香港 · 北京 · 新加坡",
+    "contactRemoteText": "支援遠端交付，服務全國及海外客戶"
+  },
+  "aiPet": { "greeting": "你好！我是小解，有什麼可以幫你的？", "placeholder": "輸入你的需求...", "thinking": "正在思考..." },
+  "footer": { "copyright": "© 2026 解負智能 Jiefu AI. All rights reserved.", "tagline": "用智能武裝每一個團隊" },
+  "common": { "learnMore": "了解更多", "contactUs": "聯絡我們", "getStarted": "立即開始", "viewAll": "查看全部" }
+}

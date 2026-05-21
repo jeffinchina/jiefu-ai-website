@@ -1,0 +1,28 @@
+{
+  "cases": [
+    {
+      "id": "case-001",
+      "industry": "E-commerce",
+      "title": "E-commerce Customer Service AI Automation — Saved 5 Agents, ¥480K/Year",
+      "challenge": "An e-commerce company with 30 employees received 800+ daily customer inquiries. The 12-person support team consumed 18% of total revenue in labor costs. No coverage during nights and weekends led to significant order losses.",
+      "solution": "Deployed an LLM-powered intelligent customer service system integrated with the product knowledge base and order system, enabling 24/7 automated responses. Complex issues are automatically escalated to human agents with full context summaries.",
+      "result": "After 3 months, the support team was reduced from 12 to 7 people. Nighttime order conversion increased by 35%. Customer satisfaction remained unchanged. Annual labor cost savings of approximately ¥480,000."
+    },
+    {
+      "id": "case-002",
+      "industry": "Foreign Trade",
+      "title": "Trade Email Auto-Processing — 300% Efficiency Boost",
+      "challenge": "An 8-person foreign trade team handled 200+ English inquiry emails daily. Response quality varied significantly, and slow follow-up caused substantial lead loss.",
+      "solution": "Built an intelligent email processing pipeline: auto-classify inquiries → extract key information → generate personalized reply drafts → human review and one-click send. Integrated with CRM for automatic follow-up tracking.",
+      "result": "Email processing efficiency increased by 300%. Inquiry response time dropped from 4 hours to 15 minutes on average. Monthly conversion rate improved by 22%."
+    },
+    {
+      "id": "case-003",
+      "industry": "Food & Beverage",
+      "title": "Chain Restaurant Scheduling & Procurement AI Assistant — ¥650K/Year Saved",
+      "challenge": "A chain restaurant brand with 15 locations relied entirely on store managers' experience for scheduling and procurement. Staffing inefficiencies were common, and food waste reached 12%.",
+      "solution": "Built an AI prediction model based on historical sales data and external factors like weather and holidays. Automatically generates optimal shift schedules and procurement lists, pushed to each store via WeChat.",
+      "result": "Labor costs reduced by 18%. Food waste dropped from 12% to 5.3%. Annual savings of approximately ¥650,000."
+    }
+  ]
+}

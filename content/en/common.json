@@ -1,0 +1,23 @@
+{
+  "brand": {
+    "name": "Jeff AI",
+    "nameEn": "Jeff AI",
+    "slogan": "Arm every team with intelligence",
+    "sloganEn": "Arm every team with intelligence",
+    "email": "contact@lmrun.com",
+    "phone": "",
+    "wechat": ""
+  },
+  "stats": {
+    "clientsServed": 50,
+    "solutionsDelivered": 120,
+    "personDaysSaved": 8000
+  },
+  "branches": [
+    { "city": "Nanjing", "address": "Room 305, Building A, Nanjing University Science Park, 22 Hankou Road, Gulou District, Nanjing, Jiangsu", "country": "China", "phone": "+86 25 8888-8888" },
+    { "city": "Shenzhen", "address": "Room 1206, Building B, Shenzhen Bay Startup Plaza, South Science Park, Nanshan District, Shenzhen, Guangdong", "country": "China", "phone": "+86 755 8888-8888" },
+    { "city": "Hong Kong", "address": "Unit 1802, 18/F, The Center, 99 Queen's Road Central, Central, Hong Kong", "country": "China", "phone": "+852 8888-8888" },
+    { "city": "Beijing", "address": "Room 708, 7/F, Zhongguancun Dream Lab, 1 Zhongguancun Street, Haidian District, Beijing", "country": "China", "phone": "+86 10 8888-8888" },
+    { "city": "Singapore", "address": "1 Raffles Place, #20-61 One Raffles Place Tower 2, Singapore 048616", "country": "Singapore", "phone": "+65 6888-8888" }
+  ]
+}

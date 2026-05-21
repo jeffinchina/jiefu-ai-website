@@ -1,0 +1,57 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "cases": "Cases",
+    "hardware": "Hardware",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Arm Every Team with Intelligence",
+    "subtitle": "AI-Powered Enterprise Intelligence Solutions",
+    "cta": "Free Consultation"
+  },
+  "pages": {
+    "aboutSubtitle": "Jeff AI — Arm every team with intelligence",
+    "aboutBranches": "Global Offices",
+    "aboutTeam": "Core Team",
+    "servicesSubtitle": "From diagnosis to delivery, professional AI services covering the full automation lifecycle",
+    "casesSubtitle": "See how we help enterprises across industries achieve intelligent transformation",
+    "hardware": "Hardware Advisor",
+    "hardwareSubtitle": "Tell us your requirements, hardware, or budget — we'll find the optimal solution",
+    "hardwarePlaceholder": "e.g. I want to run Qwen 72B for customer support / I have an RTX 4090 / Budget $3K for AI deployment...",
+    "hardwareAnalyze": "Analyze",
+    "hardwareTry": "Try:",
+    "hardwareHints": ["Qwen 72B", "RTX 4090", "No GPU?", "Budget $1K"],
+    "contactSubtitle": "Tell us your needs and pain points — we'll respond within 24 hours",
+    "contactName": "Name",
+    "contactCompany": "Company",
+    "contactEmail": "Email",
+    "contactMessage": "Describe your needs",
+    "contactSend": "Send Message",
+    "contactSent": "Message Sent",
+    "contactSentHint": "We will contact you shortly",
+    "contactEmailLabel": "Email",
+    "contactWechatLabel": "WeChat",
+    "contactWechatHint": "Add our WeCom for instant support",
+    "contactRegionsLabel": "Service Regions",
+    "contactRegionsText": "Nanjing · Shenzhen · Hong Kong · Beijing · Singapore",
+    "contactRemoteText": "Remote delivery available, serving clients nationwide and worldwide"
+  },
+  "aiPet": {
+    "greeting": "Hi! I'm Jeffy, your AI assistant. How can I help?",
+    "placeholder": "Tell me your needs...",
+    "thinking": "Thinking..."
+  },
+  "footer": {
+    "copyright": "© 2026 Jeff AI. All rights reserved.",
+    "tagline": "Arm every team with intelligence"
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "contactUs": "Contact Us",
+    "getStarted": "Get Started",
+    "viewAll": "View All"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "brand": {
+    "name": "解负智能",
+    "nameEn": "Jeff AI",
+    "slogan": "用智能武装每一个团队",
+    "sloganEn": "Arm every team with intelligence",
+    "email": "contact@lmrun.com",
+    "phone": "",
+    "wechat": ""
+  },
+  "stats": {
+    "clientsServed": 50,
+    "solutionsDelivered": 120,
+    "personDaysSaved": 8000
+  },
+  "branches": [
+    { "city": "南京", "address": "江苏省南京市鼓楼区汉口路22号南京大学科技园A座305室", "country": "中国", "phone": "+86 25 8888-8888" },
+    { "city": "深圳", "address": "广东省深圳市南山区科技园南区深圳湾创业广场B座1206室", "country": "中国", "phone": "+86 755 8888-8888" },
+    { "city": "香港", "address": "香港中環皇后大道中99號中環中心18樓1802室", "country": "中国", "phone": "+852 8888-8888" },
+    { "city": "北京", "address": "北京市海淀区中关村大街1号中关村梦想实验室7层708室", "country": "中国", "phone": "+86 10 8888-8888" },
+    { "city": "新加坡", "address": "1 Raffles Place, #20-61 One Raffles Place Tower 2, Singapore 048616", "country": "新加坡", "phone": "+65 6888-8888" }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "hero": {
+    "title": "Arm Every Team with Intelligence",
+    "subtitle": "AI-powered enterprise intelligence solutions, helping SMEs reduce costs and boost efficiency",
+    "cta": "Book Free Consultation"
+  },
+  "intro": {
+    "heading": "What We Do",
+    "description": "Jeff AI specializes in providing AI intelligence solutions for SMEs. From diagnostic assessment to solution delivery, we accompany enterprises through every step of their intelligent transformation journey."
+  },
+  "whyUs": {
+    "heading": "Why Choose Us",
+    "items": [
+      { "title": "Lightweight Start", "description": "No feature bloat. We solve real pain points with minimal cost to validate AI value." },
+      { "title": "Delivery-Focused", "description": "We deliver working systems, not slide decks. Actual operation is our acceptance standard." },
+      { "title": "Global Vision", "description": "International team tracking cutting-edge AI worldwide, bringing best practices to your business." },
+      { "title": "Continuous Iteration", "description": "AI evolves, so do our solutions. One partnership, long-term benefits." }
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "nav": {
+    "home": "首页",
+    "about": "关于我们",
+    "services": "服务",
+    "cases": "案例",
+    "hardware": "硬件适配",
+    "contact": "联系我们"
+  },
+  "hero": {
+    "title": "用智能武装每一个团队",
+    "subtitle": "AI 驱动的企业智能化解决方案",
+    "cta": "免费咨询"
+  },
+  "pages": {
+    "aboutSubtitle": "解负智能，用智能武装每一个团队",
+    "aboutBranches": "全球分支机构",
+    "aboutTeam": "核心团队",
+    "servicesSubtitle": "从诊断到落地，覆盖 AI 智能化全流程的专业服务",
+    "casesSubtitle": "看看我们如何帮助不同行业的企业实现智能化升级",
+    "hardware": "硬件适配顾问",
+    "hardwareSubtitle": "告诉我们你的需求、设备或预算，我们帮你找到最优方案",
+    "hardwarePlaceholder": "例如：我想用 Qwen 72B 做客服 / 我有一台 RTX 4090 / 预算2万想部署智能体...",
+    "hardwareAnalyze": "分析",
+    "hardwareTry": "试试：",
+    "hardwareHints": ["Qwen 72B", "RTX 4090", "没显卡能跑吗", "预算1万"],
+    "contactSubtitle": "告诉我们你的需求和痛点，我们会在 24 小时内回复",
+    "contactName": "姓名",
+    "contactCompany": "公司",
+    "contactEmail": "邮箱",
+    "contactMessage": "描述你的需求",
+    "contactSend": "发送消息",
+    "contactSent": "消息已发送",
+    "contactSentHint": "我们会尽快与您联系",
+    "contactEmailLabel": "邮箱",
+    "contactWechatLabel": "微信",
+    "contactWechatHint": "添加企业微信获取即时支持",
+    "contactRegionsLabel": "服务区域",
+    "contactRegionsText": "南京 · 深圳 · 香港 · 北京 · 新加坡",
+    "contactRemoteText": "支持远程交付，服务全国及海外客户"
+  },
+  "aiPet": {
+    "greeting": "你好！我是小解，有什么可以帮你的？",
+    "placeholder": "输入你的需求...",
+    "thinking": "正在思考..."
+  },
+  "footer": {
+    "copyright": "© 2026 解负智能 Jeff AI. All rights reserved.",
+    "tagline": "用智能武装每一个团队"
+  },
+  "common": {
+    "learnMore": "了解更多",
+    "contactUs": "联系我们",
+    "getStarted": "立即开始",
+    "viewAll": "查看全部"
+  }
+}

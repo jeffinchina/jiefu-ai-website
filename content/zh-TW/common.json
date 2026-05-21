@@ -1,0 +1,23 @@
+{
+  "brand": {
+    "name": "解負智能",
+    "nameEn": "Jiefu AI",
+    "slogan": "用智能武裝每一個團隊",
+    "sloganEn": "Arm every team with intelligence",
+    "email": "contact@lmrun.com",
+    "phone": "",
+    "wechat": ""
+  },
+  "stats": {
+    "clientsServed": 50,
+    "solutionsDelivered": 120,
+    "personDaysSaved": 8000
+  },
+  "branches": [
+    { "city": "南京", "address": "江蘇省南京市鼓樓區漢口路22號南京大學科技園A座305室", "country": "中國", "phone": "+86 25 8888-8888" },
+    { "city": "深圳", "address": "廣東省深圳市南山區科技園南區深圳灣創業廣場B座1206室", "country": "中國", "phone": "+86 755 8888-8888" },
+    { "city": "香港", "address": "香港中環皇后大道中99號中環中心18樓1802室", "country": "中國", "phone": "+852 8888-8888" },
+    { "city": "北京", "address": "北京市海淀區中關村大街1號中關村夢想實驗室7層708室", "country": "中國", "phone": "+86 10 8888-8888" },
+    { "city": "新加坡", "address": "1 Raffles Place, #20-61 One Raffles Place Tower 2, Singapore 048616", "country": "新加坡", "phone": "+65 6888-8888" }
+  ]
+}

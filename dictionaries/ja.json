@@ -1,0 +1,22 @@
+{
+  "nav": { "home": "ホーム", "about": "私たちについて", "services": "サービス", "cases": "事例", "hardware": "ハードウェア", "contact": "お問い合わせ" },
+  "hero": { "title": "Arm Every Team with Intelligence", "subtitle": "AI駆動のエンタープライズインテリジェンスソリューション", "cta": "無料相談" },
+  "pages": {
+    "aboutSubtitle": "Jeff AI — Arm every team with intelligence",
+    "aboutBranches": "グローバルオフィス", "aboutTeam": "コアチーム",
+    "servicesSubtitle": "診断から導入まで、自動化の全サイクルをカバーするプロフェッショナルAIサービス",
+    "casesSubtitle": "さまざまな業界の企業がインテリジェント変革を実現した事例をご覧ください",
+    "hardware": "ハードウェアアドバイザー", "hardwareSubtitle": "要件、ハードウェア、予算をお知らせください—最適なソリューションを見つけます",
+    "hardwarePlaceholder": "例：Qwen 72Bを使いたい / RTX 4090を持っている / AI導入の予算$3K...",
+    "hardwareAnalyze": "分析", "hardwareTry": "試す:", "hardwareHints": ["Qwen 72B", "RTX 4090", "GPUなし?", "予算$1K"],
+    "contactSubtitle": "お客様のニーズをお聞かせください—24時間以内に返信します",
+    "contactName": "名前", "contactCompany": "会社", "contactEmail": "メール", "contactMessage": "ニーズを説明してください",
+    "contactSend": "送信", "contactSent": "送信完了", "contactSentHint": "まもなくご連絡いたします",
+    "contactEmailLabel": "メール", "contactWechatLabel": "WeChat", "contactWechatHint": "WeComを追加してサポートを受ける",
+    "contactRegionsLabel": "サービス地域", "contactRegionsText": "南京 · 深圳 · 香港 · 北京 · シンガポール",
+    "contactRemoteText": "リモート対応可能、全国および海外のお客様に対応"
+  },
+  "aiPet": { "greeting": "こんにちは！AIアシスタントのJeffyです。お手伝いできることはありますか？", "placeholder": "ニーズをお聞かせください...", "thinking": "考え中..." },
+  "footer": { "copyright": "© 2026 Jeff AI. All rights reserved.", "tagline": "Arm every team with intelligence" },
+  "common": { "learnMore": "詳しく見る", "contactUs": "お問い合わせ", "getStarted": "始める", "viewAll": "すべて見る" }
+}

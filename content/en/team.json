@@ -1,0 +1,32 @@
+{
+  "members": [
+    {
+      "name": "Jeff",
+      "title": "Founder & CEO",
+      "bio": "Nanjing University graduate with years of experience in enterprise digitalization and AI implementation. Has helped dozens of enterprises complete their intelligent transformation. Committed to making AI technology truly serve the real business scenarios of SMEs.",
+      "photo": "",
+      "real": true
+    },
+    {
+      "name": "Dr. Alex Chen",
+      "title": "CTO",
+      "bio": "Ph.D. in Computer Science from Carnegie Mellon University. Former AI researcher at Silicon Valley tech giants. 10+ years of research experience in NLP and multimodal models. Leads our core technology architecture and agent product development.",
+      "photo": "",
+      "real": false
+    },
+    {
+      "name": "Wang Sihan",
+      "title": "COO / Client Success Lead",
+      "bio": "Ten years of enterprise consulting experience, having served Fortune 500 companies and fast-growing startups. Responsible for client needs assessment and project delivery, ensuring every solution truly solves client problems.",
+      "photo": "",
+      "real": false
+    },
+    {
+      "name": "Marcus Okafor",
+      "title": "Global Business Development Director",
+      "bio": "MBA from London Business School with extensive market expansion experience across Africa and Southeast Asia. Responsible for global business development, helping overseas clients leverage AI technology to enhance competitiveness.",
+      "photo": "",
+      "real": false
+    }
+  ]
+}

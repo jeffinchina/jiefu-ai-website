@@ -1,0 +1,32 @@
+{
+  "services": [
+    {
+      "id": "diagnosis",
+      "title": "AI Intelligence Diagnosis",
+      "description": "Deep dive into your business processes to identify the most suitable areas for AI enhancement, delivering actionable intelligence transformation plans.",
+      "icon": "Search",
+      "features": ["Business Process Mapping", "AI Fit Assessment", "ROI Analysis", "Phased Implementation Roadmap"]
+    },
+    {
+      "id": "agent-dev",
+      "title": "Custom Agent Development",
+      "description": "Build bespoke AI agents tailored to your actual business scenarios, seamlessly integrating with existing systems and workflows.",
+      "icon": "Bot",
+      "features": ["Requirements Analysis & Design", "Agent Development & Training", "System Integration", "Continuous Optimization"]
+    },
+    {
+      "id": "workflow",
+      "title": "Workflow Automation",
+      "description": "Orchestrate your existing tools and systems with AI to build automated workflows that handle repetitive tasks autonomously.",
+      "icon": "Workflow",
+      "features": ["Tool Suite Audit", "Automation Flow Design", "n8n/Coze Platform Deployment", "Exception Handling & Monitoring"]
+    },
+    {
+      "id": "hardware",
+      "title": "Hardware Advisory",
+      "description": "Recommend optimal hardware configurations based on your AI requirements, balancing performance, cost, and scalability.",
+      "icon": "Server",
+      "features": ["Needs & Budget Assessment", "Hardware Configuration Recommendation", "On-Prem vs. Cloud Comparison", "Procurement & Deployment Guidance"]
+    }
+  ]
+}

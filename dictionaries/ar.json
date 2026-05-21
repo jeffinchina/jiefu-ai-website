@@ -1,0 +1,22 @@
+{
+  "nav": { "home": "الرئيسية", "about": "من نحن", "services": "الخدمات", "cases": "الحالات", "hardware": "الأجهزة", "contact": "اتصل بنا" },
+  "hero": { "title": "Arm Every Team with Intelligence", "subtitle": "حلول ذكاء مؤسسي مدعومة بالذكاء الاصطناعي", "cta": "استشارة مجانية" },
+  "pages": {
+    "aboutSubtitle": "Jeff AI — Arm every team with intelligence",
+    "aboutBranches": "المكاتب العالمية", "aboutTeam": "الفريق الأساسي",
+    "servicesSubtitle": "من التشخيص إلى التنفيذ، خدمات ذكاء اصطناعي احترافية تغطي دورة الأتمتة الكاملة",
+    "casesSubtitle": "تعرف على كيف نساعد الشركات في مختلف القطاعات على تحقيق التحول الذكي",
+    "hardware": "مستشار الأجهزة", "hardwareSubtitle": "أخبرنا بمتطلباتك أو أجهزتك أو ميزانيتك — سنجد الحل الأمثل",
+    "hardwarePlaceholder": "مثال: أريد استخدام Qwen 72B / لدي RTX 4090 / ميزانية $3K للذكاء الاصطناعي...",
+    "hardwareAnalyze": "تحليل", "hardwareTry": "جرّب:", "hardwareHints": ["Qwen 72B", "RTX 4090", "بدون GPU؟", "ميزانية $1K"],
+    "contactSubtitle": "أخبرنا باحتياجاتك — نرد خلال 24 ساعة",
+    "contactName": "الاسم", "contactCompany": "الشركة", "contactEmail": "البريد الإلكتروني", "contactMessage": "صف احتياجاتك",
+    "contactSend": "إرسال", "contactSent": "تم الإرسال", "contactSentHint": "سنتواصل معك قريباً",
+    "contactEmailLabel": "البريد الإلكتروني", "contactWechatLabel": "وي شات", "contactWechatHint": "أضف WeCom الخاص بنا للدعم",
+    "contactRegionsLabel": "المناطق", "contactRegionsText": "نانجينغ · شنتشن · هونغ كونغ · بكين · سنغافورة",
+    "contactRemoteText": "التسليم عن بعد متاح، خدمة للعملاء المحليين والدوليين"
+  },
+  "aiPet": { "greeting": "مرحباً! أنا جيفي، مساعدك الذكي. كيف يمكنني مساعدتك؟", "placeholder": "أخبرني باحتياجاتك...", "thinking": "جاري التفكير..." },
+  "footer": { "copyright": "© 2026 Jeff AI. جميع الحقوق محفوظة.", "tagline": "Arm every team with intelligence" },
+  "common": { "learnMore": "اعرف المزيد", "contactUs": "اتصل بنا", "getStarted": "ابدأ الآن", "viewAll": "عرض الكل" }
+}

@@ -1,0 +1,22 @@
+{
+  "nav": { "home": "Accueil", "about": "À propos", "services": "Services", "cases": "Réalisations", "hardware": "Matériel", "contact": "Contact" },
+  "hero": { "title": "Arm Every Team with Intelligence", "subtitle": "Solutions d'entreprise propulsées par l'IA", "cta": "Consultation gratuite" },
+  "pages": {
+    "aboutSubtitle": "Jeff AI — Arm every team with intelligence",
+    "aboutBranches": "Bureaux internationaux", "aboutTeam": "Équipe dirigeante",
+    "servicesSubtitle": "Du diagnostic au déploiement, des services IA professionnels couvrant tout le cycle d'automatisation",
+    "casesSubtitle": "Découvrez comment nous aidons les entreprises de tous secteurs à réussir leur transformation intelligente",
+    "hardware": "Conseiller Matériel", "hardwareSubtitle": "Dites-nous vos besoins, votre matériel ou votre budget — nous trouverons la solution optimale",
+    "hardwarePlaceholder": "Ex: Je veux utiliser Qwen 72B / J'ai une RTX 4090 / Budget 3K$ pour l'IA...",
+    "hardwareAnalyze": "Analyser", "hardwareTry": "Essayer:", "hardwareHints": ["Qwen 72B", "RTX 4090", "Pas de GPU?", "Budget 1K$"],
+    "contactSubtitle": "Décrivez vos besoins — nous répondons sous 24 heures",
+    "contactName": "Nom", "contactCompany": "Entreprise", "contactEmail": "E-mail", "contactMessage": "Décrivez vos besoins",
+    "contactSend": "Envoyer", "contactSent": "Message envoyé", "contactSentHint": "Nous vous contacterons bientôt",
+    "contactEmailLabel": "E-mail", "contactWechatLabel": "WeChat", "contactWechatHint": "Ajoutez notre WeCom pour du support",
+    "contactRegionsLabel": "Régions", "contactRegionsText": "Nankin · Shenzhen · Hong Kong · Pékin · Singapour",
+    "contactRemoteText": "Livraison à distance disponible, service national et international"
+  },
+  "aiPet": { "greeting": "Bonjour ! Je suis Jeffy, votre assistant IA. Comment puis-je vous aider ?", "placeholder": "Dites-moi vos besoins...", "thinking": "Réflexion..." },
+  "footer": { "copyright": "© 2026 Jeff AI. Tous droits réservés.", "tagline": "Arm every team with intelligence" },
+  "common": { "learnMore": "En savoir plus", "contactUs": "Contactez-nous", "getStarted": "Commencer", "viewAll": "Voir tout" }
+}
