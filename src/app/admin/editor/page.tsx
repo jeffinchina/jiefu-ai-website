@@ -14,22 +14,36 @@ const FILES: Record<Tab, string> = {
   '联系方式': 'content/zh-CN/common.json',
 }
 
+function clone<T>(obj: T): T { return JSON.parse(JSON.stringify(obj)) }
+
 export default function EditorPage() {
   const [tab, setTab] = useState<Tab>('业绩数据')
-  const { content, loading } = useContent(FILES[tab])
+  const { content, loading, error } = useContent(FILES[tab])
   const [msg, setMsg] = useState<{ type: 'ok' | 'err'; text: string } | null>(null)
+  const [saving, setSaving] = useState(false)
 
-  const token = typeof window !== 'undefined' ? localStorage.getItem('admin_token') || '' : ''
-
-  async function save(data: unknown) {
+  async function doSave(data: unknown) {
+    setSaving(true)
     setMsg(null)
-    const res = await fetch('/api/admin/save', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
-      body: JSON.stringify({ file: FILES[tab], content: data, message: `admin: update ${tab}` }),
-    }).then(r => r.json())
-    setMsg(res.error ? { type: 'err', text: res.error } : { type: 'ok', text: '保存成功！网站将在 2-3 分钟后更新。' })
-    setTimeout(() => setMsg(null), 4000)
+    try {
+      const token = localStorage.getItem('admin_token') || ''
+      const res = await fetch('/api/admin/save', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
+        body: JSON.stringify({ file: FILES[tab], content: data, message: `admin: update ${tab}` }),
+      })
+      const result = await res.json()
+      if (res.ok && result.success) {
+        setMsg({ type: 'ok', text: '保存成功！网站将在 2-3 分钟后更新。' })
+      } else {
+        setMsg({ type: 'err', text: result.error || '保存失败' })
+      }
+    } catch (e) {
+      setMsg({ type: 'err', text: (e as Error).message })
+    } finally {
+      setSaving(false)
+      setTimeout(() => setMsg(null), 5000)
+    }
   }
 
   return (
@@ -47,18 +61,21 @@ export default function EditorPage() {
           {msg.type === 'ok' ? <CheckCircle size={16} /> : <AlertCircle size={16} />}{msg.text}
         </div>
       )}
-      {loading ? <p className="text-sm text-[var(--foreground)]/40">加载中...</p> : content ? (
-        <EditorPanel tab={tab} content={content as Record<string, unknown>} onSave={save} />
-      ) : <p className="text-sm text-[var(--foreground)]/40">无法加载内容</p>}
+      {loading ? <p className="text-sm text-[var(--foreground)]/40">加载中...</p> :
+       error ? <p className="text-sm text-red-400">加载失败：{error}</p> :
+       content ? <EditorPanel tab={tab} content={content} onSave={doSave} saving={saving} /> :
+       <p className="text-sm text-[var(--foreground)]/40">暂无数据</p>}
     </AdminLayout>
   )
 }
 
-function EditorPanel({ tab, content, onSave }: { tab: Tab; content: Record<string, unknown>; onSave: (d: unknown) => void }) {
-  const [data, setData] = useState(structuredClone(content))
+function EditorPanel({ tab, content, onSave, saving }: { tab: Tab; content: Record<string, unknown>; onSave: (d: unknown) => void; saving: boolean }) {
+  const [data, setData] = useState(() => clone(content))
+  const [preview, setPreview] = useState(false)
+
   function upd(path: string[], value: unknown) {
     setData((prev: Record<string, unknown>) => {
-      const next = structuredClone(prev) as Record<string, unknown>
+      const next = clone(prev) as Record<string, unknown>
       let cur = next
       for (let i = 0; i < path.length - 1; i++) cur = cur[path[i]] as Record<string, unknown>
       cur[path[path.length - 1]] = value
@@ -67,7 +84,14 @@ function EditorPanel({ tab, content, onSave }: { tab: Tab; content: Record<strin
   }
   const cls = "w-full px-3 py-1.5 rounded-lg bg-[var(--background)] border border-[var(--border)] text-sm focus:outline-none focus:border-[var(--primary)]"
   const lbl = "block text-xs font-medium text-[var(--foreground)]/60 mb-1"
-  const Btn = <button onClick={() => onSave(data)} className="flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white text-sm"><Save size={14} />保存</button>
+  const Btn = (
+    <div className="flex gap-2">
+      <button onClick={() => onSave(data)} disabled={saving} className="flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white text-sm disabled:opacity-50">
+        <Save size={14} />{saving ? '保存中...' : '保存'}
+      </button>
+      <button onClick={() => setPreview(!preview)} className="px-4 py-2 rounded-xl border border-[var(--border)] text-sm text-[var(--foreground)]/60 hover:text-[var(--foreground)]">预览</button>
+    </div>
+  )
 
   if (tab === '业绩数据') {
     const s = data.stats as Record<string, number>
@@ -76,6 +100,7 @@ function EditorPanel({ tab, content, onSave }: { tab: Tab; content: Record<strin
       <div><label className={lbl}>落地方案数</label><input type="number" value={s.solutionsDelivered} onChange={e => upd(['stats','solutionsDelivered'],parseInt(e.target.value)||0)} className={cls} /></div>
       <div><label className={lbl}>累计节省(人天)</label><input type="number" value={s.personDaysSaved} onChange={e => upd(['stats','personDaysSaved'],parseInt(e.target.value)||0)} className={cls} /></div>
       {Btn}
+      {preview && <Preview data={s} type="stats" />}
     </div>
   }
 
@@ -107,7 +132,7 @@ function EditorPanel({ tab, content, onSave }: { tab: Tab; content: Record<strin
         ))}
         <button onClick={() => upd(['whyUs','items'],[...items,{title:'',description:''}])} className="text-xs text-[var(--accent)] flex items-center gap-1"><Plus size={12}/>添加卡片</button>
       </div>
-      <div>{Btn}</div>
+      {Btn}
     </div>
   }
 
@@ -136,7 +161,6 @@ function EditorPanel({ tab, content, onSave }: { tab: Tab; content: Record<strin
           <div className="flex items-center justify-between"><span className="text-sm font-semibold">{(m.name as string)||`成员${i+1}`}</span>
             <button onClick={() => {members.splice(i,1);upd(['members'],[...members])}} className="text-red-400"><Trash2 size={14}/></button></div>
           <div className="grid grid-cols-2 gap-2"><div><label className={lbl}>姓名</label><input value={(m.name as string)||''} onChange={e=>{(members[i] as Record<string,unknown>).name=e.target.value;upd(['members'],[...members])}} className={cls}/></div><div><label className={lbl}>职务</label><input value={(m.title as string)||''} onChange={e=>{(members[i] as Record<string,unknown>).title=e.target.value;upd(['members'],[...members])}} className={cls}/></div></div>
-          <div><label className={lbl}>照片URL</label><input value={(m.photo as string)||''} onChange={e=>{(members[i] as Record<string,unknown>).photo=e.target.value;upd(['members'],[...members])}} className={cls} placeholder="https://..."/></div>
           <div><label className={lbl}>简介</label><textarea value={(m.bio as string)||''} onChange={e=>{(members[i] as Record<string,unknown>).bio=e.target.value;upd(['members'],[...members])}} className={cls+' h-16'}/></div>
         </div>
       ))}
@@ -200,4 +224,13 @@ function EditorPanel({ tab, content, onSave }: { tab: Tab; content: Record<strin
   }
 
   return null
+}
+
+function Preview({ data, type }: { data: unknown; type: string }) {
+  return (
+    <div className="mt-4 p-4 rounded-lg border border-[var(--border)] bg-[var(--surface)]/30">
+      <p className="text-xs text-[var(--foreground)]/40 mb-2">预览</p>
+      <pre className="text-xs text-[var(--foreground)]/60 overflow-auto max-h-40">{JSON.stringify(data, null, 2)}</pre>
+    </div>
+  )
 }
