@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import AdminLayout from '@/components/admin/AdminLayout'
 import { useContent } from '@/components/admin/useContent'
 import { Save, Plus, Trash2, CheckCircle, AlertCircle } from 'lucide-react'
@@ -63,7 +63,7 @@ export default function EditorPage() {
       )}
       {loading ? <p className="text-sm text-[var(--foreground)]/40">加载中...</p> :
        error ? <p className="text-sm text-red-400">加载失败：{error}</p> :
-       content ? <EditorPanel tab={tab} content={content} onSave={doSave} saving={saving} /> :
+       content ? <EditorPanel key={`${tab}-${JSON.stringify(content).slice(0,50)}`} tab={tab} content={content} onSave={doSave} saving={saving} /> :
        <p className="text-sm text-[var(--foreground)]/40">暂无数据</p>}
     </AdminLayout>
   )
@@ -72,6 +72,10 @@ export default function EditorPage() {
 function EditorPanel({ tab, content, onSave, saving }: { tab: Tab; content: Record<string, unknown>; onSave: (d: unknown) => void; saving: boolean }) {
   const [data, setData] = useState(() => clone(content))
   const [preview, setPreview] = useState(false)
+
+  // Sync when content changes (tab switch)
+  const contentFingerprint = JSON.stringify(content).slice(0, 100)
+  useEffect(() => { setData(clone(content)) }, [contentFingerprint])
 
   function upd(path: string[], value: unknown) {
     setData((prev: Record<string, unknown>) => {
