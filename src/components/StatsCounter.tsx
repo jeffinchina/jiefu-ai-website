@@ -3,30 +3,32 @@
 import { useEffect, useState, useRef } from 'react'
 import type { CompanyStats } from '@/lib/content'
 
-interface StatsCounterProps {
-  stats: CompanyStats
-  locale: string
-}
+interface StatsCounterProps { stats: CompanyStats; locale: string }
 
 function useCountUp(target: number, duration: number = 2000) {
-  const [value, setValue] = useState(0)
-  const started = useRef(false)
+  const [value, setValue] = useState(target)
+  const prevTarget = useRef(target)
+  const animFrame = useRef<number>(0)
 
   useEffect(() => {
-    if (started.current) return
-    started.current = true
+    // If target didn't change, skip
+    if (prevTarget.current === target && value === target) return
+    prevTarget.current = target
 
-    let startTime: number
+    // Reset to 0 for re-animation
+    setValue(0)
+
+    const startTime = performance.now()
     function tick(time: number) {
-      if (!startTime) startTime = time
       const elapsed = time - startTime
       const progress = Math.min(elapsed / duration, 1)
-      // Ease out cubic
       const eased = 1 - Math.pow(1 - progress, 3)
       setValue(Math.floor(eased * target))
-      if (progress < 1) requestAnimationFrame(tick)
+      if (progress < 1) animFrame.current = requestAnimationFrame(tick)
     }
-    requestAnimationFrame(tick)
+    // Small delay to let the reset to 0 render before animating up
+    const timer = setTimeout(() => { animFrame.current = requestAnimationFrame(tick) }, 50)
+    return () => { clearTimeout(timer); cancelAnimationFrame(animFrame.current) }
   }, [target, duration])
 
   return value
@@ -34,6 +36,7 @@ function useCountUp(target: number, duration: number = 2000) {
 
 const labels: Record<string, string[]> = {
   'zh-CN': ['企业客户', '落地方案', '累计节省(人天)'],
+  'zh-TW': ['企業客戶', '落地方案', '累計節省(人天)'],
   en: ['Enterprise Clients', 'Solutions Delivered', 'Person-Days Saved'],
 }
 
@@ -52,14 +55,8 @@ export default function StatsCounter({ stats, locale }: StatsCounterProps) {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
       {values.map((item, i) => (
-        <div
-          key={i}
-          className="text-center p-6 rounded-2xl border border-[var(--border)] bg-[var(--surface)]/50"
-        >
-          <div className="text-4xl font-bold gradient-text mb-1">
-            {item.value.toLocaleString()}
-            {item.suffix}
-          </div>
+        <div key={i} className="text-center p-6 rounded-2xl border border-[var(--border)] bg-[var(--surface)]/50">
+          <div className="text-4xl font-bold gradient-text mb-1">{item.value.toLocaleString()}{item.suffix}</div>
           <div className="text-sm text-[var(--foreground)]/50">{item.label}</div>
         </div>
       ))}
