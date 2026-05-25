@@ -15,7 +15,7 @@ interface Props {
 
 export default function ServicesContent({ lang, dict, initial }: Props) {
   const { content } = useLiveContent<{ services: ServiceItem[] }>('zh-CN', 'services', null)
-  const services = content?.services || initial
+  const services = (content as { services?: ServiceItem[] } | null)?.services || initial
 
   return (
     <div className="pt-24 pb-20 px-4">

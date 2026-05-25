@@ -44,7 +44,7 @@ export async function onRequest(context: { request: Request; env: Record<string,
       headers: {
         'Content-Type': 'application/json; charset=utf-8',
         'Access-Control-Allow-Origin': '*',
-        'Cache-Control': 'public, max-age=30, s-maxage=30',
+        'Cache-Control': 'public, max-age=5, s-maxage=5',
       },
     })
   } catch (e) {

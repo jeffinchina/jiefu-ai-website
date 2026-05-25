@@ -35,20 +35,32 @@ export default function EditorPage() {
   async function doSave(data: unknown) {
     setSaving(true)
     setMsg(null)
+    const ctrl = new AbortController()
+    const timer = setTimeout(() => ctrl.abort(), 15000)
     try {
       const token = localStorage.getItem('admin_token') || ''
       const res = await fetch('/api/admin/save', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
         body: JSON.stringify({ file: tab.file, content: data, message: `admin: update ${tab.label}` }),
+        signal: ctrl.signal,
       })
       const result = await res.json()
-      setMsg(result.success ? { type: 'ok', text: '保存成功！' } : { type: 'err', text: result.error || '保存失败' })
-    } catch (e) {
-      setMsg({ type: 'err', text: (e as Error).message })
+      if (result.success) {
+        setMsg({ type: 'ok', text: '保存成功！刷新网站页面即可看到更新。' })
+      } else {
+        setMsg({ type: 'err', text: result.error || '保存失败，请重试' })
+      }
+    } catch (e: unknown) {
+      if (e instanceof DOMException && e.name === 'AbortError') {
+        setMsg({ type: 'err', text: '请求超时，请检查网络后重试' })
+      } else {
+        setMsg({ type: 'err', text: `网络错误：${(e as Error).message || '请重试'}` })
+      }
     } finally {
+      clearTimeout(timer)
       setSaving(false)
-      setTimeout(() => setMsg(null), 5000)
+      setTimeout(() => setMsg(null), 6000)
     }
   }
 
