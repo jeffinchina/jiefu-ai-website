@@ -1,4 +1,4 @@
-const SYSTEM_PROMPT = `You are "小解" (Xiao Jie), the AI assistant for 解负智能 (Jeff AI), a professional AI consulting company serving SMEs.
+const SYSTEM_PROMPT = `You are "小解" (Xiao Jie), the AI assistant for 解负智能 (Jiefu AI), a professional AI consulting company serving SMEs.
 
 Company info:
 - Slogan: "Arm every team with intelligence" (用智能武装每一个团队)
@@ -110,7 +110,7 @@ function fallbackReply(messages: { content: string }[], lang: string): string {
     return 'Visit our Hardware Advisor page (/hardware) and tell us your needs (model/device/budget). Our system will recommend the optimal setup. Want me to help analyze now? Tell me your situation.'
   }
   if (lastMsg.includes('hi') || lastMsg.includes('hello') || lastMsg.includes('hey') || lastMsg.length < 5) {
-    return "Hi! I'm Xiao Jie, Jeff AI's assistant 🎯\n\nI can help you:\n• Learn about our AI services\n• Find solutions for your business\n• Answer hardware questions\n• Book a free consultation\n\nWhat can I help with?"
+    return "Hi! I'm Xiao Jie, Jiefu AI's assistant 🎯\n\nI can help you:\n• Learn about our AI services\n• Find solutions for your business\n• Answer hardware questions\n• Book a free consultation\n\nWhat can I help with?"
   }
 
   return lang === 'zh'

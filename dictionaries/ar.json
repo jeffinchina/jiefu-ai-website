@@ -2,7 +2,7 @@
   "nav": { "home": "الرئيسية", "about": "من نحن", "services": "الخدمات", "cases": "الحالات", "hardware": "الأجهزة", "contact": "اتصل بنا" },
   "hero": { "title": "Arm Every Team with Intelligence", "subtitle": "حلول ذكاء مؤسسي مدعومة بالذكاء الاصطناعي", "cta": "استشارة مجانية" },
   "pages": {
-    "aboutSubtitle": "Jeff AI — Arm every team with intelligence",
+    "aboutSubtitle": "Jiefu AI — Arm every team with intelligence",
     "aboutBranches": "المكاتب العالمية", "aboutTeam": "الفريق الأساسي",
     "servicesSubtitle": "من التشخيص إلى التنفيذ، خدمات ذكاء اصطناعي احترافية تغطي دورة الأتمتة الكاملة",
     "casesSubtitle": "تعرف على كيف نساعد الشركات في مختلف القطاعات على تحقيق التحول الذكي",
@@ -17,6 +17,6 @@
     "contactRemoteText": "التسليم عن بعد متاح، خدمة للعملاء المحليين والدوليين"
   },
   "aiPet": { "greeting": "مرحباً! أنا جيفي، مساعدك الذكي. كيف يمكنني مساعدتك؟", "placeholder": "أخبرني باحتياجاتك...", "thinking": "جاري التفكير..." },
-  "footer": { "copyright": "© 2026 Jeff AI. جميع الحقوق محفوظة.", "tagline": "Arm every team with intelligence" },
+  "footer": { "copyright": "© 2026 Jiefu AI. جميع الحقوق محفوظة.", "tagline": "Arm every team with intelligence" },
   "common": { "learnMore": "اعرف المزيد", "contactUs": "اتصل بنا", "getStarted": "ابدأ الآن", "viewAll": "عرض الكل" }
 }

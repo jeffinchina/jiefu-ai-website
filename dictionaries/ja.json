@@ -2,7 +2,7 @@
   "nav": { "home": "ホーム", "about": "私たちについて", "services": "サービス", "cases": "事例", "hardware": "ハードウェア", "contact": "お問い合わせ" },
   "hero": { "title": "Arm Every Team with Intelligence", "subtitle": "AI駆動のエンタープライズインテリジェンスソリューション", "cta": "無料相談" },
   "pages": {
-    "aboutSubtitle": "Jeff AI — Arm every team with intelligence",
+    "aboutSubtitle": "Jiefu AI — Arm every team with intelligence",
     "aboutBranches": "グローバルオフィス", "aboutTeam": "コアチーム",
     "servicesSubtitle": "診断から導入まで、自動化の全サイクルをカバーするプロフェッショナルAIサービス",
     "casesSubtitle": "さまざまな業界の企業がインテリジェント変革を実現した事例をご覧ください",
@@ -17,6 +17,6 @@
     "contactRemoteText": "リモート対応可能、全国および海外のお客様に対応"
   },
   "aiPet": { "greeting": "こんにちは！AIアシスタントのJeffyです。お手伝いできることはありますか？", "placeholder": "ニーズをお聞かせください...", "thinking": "考え中..." },
-  "footer": { "copyright": "© 2026 Jeff AI. All rights reserved.", "tagline": "Arm every team with intelligence" },
+  "footer": { "copyright": "© 2026 Jiefu AI. All rights reserved.", "tagline": "Arm every team with intelligence" },
   "common": { "learnMore": "詳しく見る", "contactUs": "お問い合わせ", "getStarted": "始める", "viewAll": "すべて見る" }
 }

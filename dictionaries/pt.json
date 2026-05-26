@@ -2,7 +2,7 @@
   "nav": { "home": "Início", "about": "Sobre", "services": "Serviços", "cases": "Casos", "hardware": "Hardware", "contact": "Contato" },
   "hero": { "title": "Arm Every Team with Intelligence", "subtitle": "Soluções empresariais de inteligência impulsionadas por IA", "cta": "Consulta gratuita" },
   "pages": {
-    "aboutSubtitle": "Jeff AI — Arm every team with intelligence",
+    "aboutSubtitle": "Jiefu AI — Arm every team with intelligence",
     "aboutBranches": "Escritórios globais", "aboutTeam": "Equipe principal",
     "servicesSubtitle": "Do diagnóstico à implementação, serviços profissionais de IA cobrindo todo o ciclo de automação",
     "casesSubtitle": "Veja como ajudamos empresas de diversos setores a alcançar a transformação inteligente",
@@ -17,6 +17,6 @@
     "contactRemoteText": "Atendimento remoto disponível, serviço nacional e internacional"
   },
   "aiPet": { "greeting": "Olá! Sou Jeffy, seu assistente IA. Como posso ajudar?", "placeholder": "Conte-me suas necessidades...", "thinking": "Pensando..." },
-  "footer": { "copyright": "© 2026 Jeff AI. Todos os direitos reservados.", "tagline": "Arm every team with intelligence" },
+  "footer": { "copyright": "© 2026 Jiefu AI. Todos os direitos reservados.", "tagline": "Arm every team with intelligence" },
   "common": { "learnMore": "Saiba mais", "contactUs": "Fale conosco", "getStarted": "Começar", "viewAll": "Ver tudo" }
 }

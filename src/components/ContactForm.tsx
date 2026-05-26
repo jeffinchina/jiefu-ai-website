@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { Mail, Send, MessageCircle } from 'lucide-react'
-import LiveBrand from './LiveBrand'
+import LiveBrand, { LiveBrandQR } from './LiveBrand'
 
 interface Props { dict: Record<string, unknown>; locale: string }
 type Dict = { pages: Record<string, string>; nav: Record<string, string> }
