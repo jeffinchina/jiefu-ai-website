@@ -57,10 +57,10 @@ export default function EditorPage() {
 }
 
 // Circular photo crop component
-function PhotoCrop({ onSave, onCancel }: { onSave: (dataUrl: string) => void; onCancel: () => void }) {
+function PhotoCrop({ existingSrc, onSave, onCancel }: { existingSrc?: string; onSave: (dataUrl: string) => void; onCancel: () => void }) {
   const fileRef = useRef<HTMLInputElement>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  const [src, setSrc] = useState<string | null>(null)
+  const [src, setSrc] = useState<string | null>(existingSrc || null)
   const [dragging, setDragging] = useState(false)
   const [crop, setCrop] = useState({ x: 0, y: 0, r: 80 })
   const imgRef = useRef<HTMLImageElement | null>(null)
@@ -306,14 +306,17 @@ function EditorView({ tabKey, content, section, onSave, saving }: {
             <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-[var(--border)] bg-[var(--background)] shrink-0">
               {(m.photo as string) ? <img src={m.photo as string} className="w-full h-full object-cover" /> : <div className="w-full h-full flex items-center justify-center text-[var(--foreground)]/20"><Upload size={20}/></div>}
             </div>
-            <button onClick={() => setCropIdx(i)} className="text-xs text-[var(--accent)] hover:underline">上传照片</button>
+            <div className="flex gap-2">
+              <button onClick={() => setCropIdx(i)} className="text-xs text-[var(--accent)] hover:underline">{(m.photo as string) ? '重新裁剪' : '上传照片'}</button>
+              {(m.photo as string) && <button onClick={() => { (members[i] as Record<string,unknown>).photo = ''; upd(['members'], [...members]) }} className="text-xs text-red-400 hover:underline">移除照片</button>}
+            </div>
           </div>
           <div className="grid grid-cols-2 gap-2"><div><label className={lbl}>姓名</label><input value={(m.name as string)||''} onChange={e => { (members[i] as Record<string,unknown>).name = e.target.value; upd(['members'], [...members]) }} className={cls}/></div><div><label className={lbl}>职务</label><input value={(m.title as string)||''} onChange={e => { (members[i] as Record<string,unknown>).title = e.target.value; upd(['members'], [...members]) }} className={cls}/></div></div>
           <div><label className={lbl}>简介</label><textarea value={(m.bio as string)||''} onChange={e => { (members[i] as Record<string,unknown>).bio = e.target.value; upd(['members'], [...members]) }} className={cls+' h-16'}/></div>
         </div>
       ))}
       <button onClick={() => upd(['members'], [...members, {name:'',title:'',bio:'',photo:'',real:false}])} className="text-xs text-[var(--accent)] flex items-center gap-1"><Plus size={12}/>添加成员</button>
-      {cropIdx !== null && <PhotoCrop onSave={(dataUrl) => { (members[cropIdx] as Record<string,unknown>).photo = dataUrl; upd(['members'], [...members]); setCropIdx(null) }} onCancel={() => setCropIdx(null)} />}
+      {cropIdx !== null && <PhotoCrop existingSrc={(members[cropIdx]?.photo as string) || undefined} onSave={(dataUrl) => { (members[cropIdx] as Record<string,unknown>).photo = dataUrl; upd(['members'], [...members]); setCropIdx(null) }} onCancel={() => setCropIdx(null)} />}
       {confirmDel !== null && <ConfirmDialog message={`确认删除「${(members[confirmDel]?.name as string) || '此成员'}」？`} onConfirm={() => confirmDelete(null, () => { members.splice(confirmDel!,1); upd(['members'], [...members]); setConfirmDel(null) })} onCancel={() => setConfirmDel(null)} />}
       {SaveBtn}
     </div>

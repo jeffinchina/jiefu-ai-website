@@ -2,11 +2,12 @@
 
 import { useState } from 'react'
 import { Mail, Send, MessageCircle } from 'lucide-react'
+import LiveBrand from './LiveBrand'
 
-interface Props { dict: Record<string, unknown> }
+interface Props { dict: Record<string, unknown>; locale: string }
 type Dict = { pages: Record<string, string>; nav: Record<string, string> }
 
-export default function ContactForm({ dict }: Props) {
+export default function ContactForm({ dict, locale }: Props) {
   const d = dict as unknown as Dict
   const [form, setForm] = useState({ name: '', company: '', email: '', message: '' })
   const [sent, setSent] = useState(false)
@@ -29,7 +30,7 @@ export default function ContactForm({ dict }: Props) {
           <div className="space-y-6">
             <div className="p-6 rounded-2xl border border-[var(--border)] bg-[var(--surface)]/50">
               <div className="flex items-center gap-3 mb-4"><Mail size={20} className="text-[var(--accent)]" /><h3 className="font-semibold">{d.pages.contactEmailLabel}</h3></div>
-              <p className="text-sm text-[var(--foreground)]/50">contact@lmrun.com</p>
+              <p className="text-sm text-[var(--foreground)]/50"><LiveBrand locale={locale} field="email" fallback="contact@lmrun.com" /></p>
             </div>
             <div className="p-6 rounded-2xl border border-[var(--border)] bg-[var(--surface)]/50">
               <div className="flex items-center gap-3 mb-4"><MessageCircle size={20} className="text-[var(--accent)]" /><h3 className="font-semibold">{d.pages.contactWechatLabel}</h3></div>

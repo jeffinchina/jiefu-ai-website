@@ -32,7 +32,7 @@ export default function AboutContent({ locale, dict, initialTeam, initialBranche
               <div key={b.city} className="p-4 rounded-xl border border-[var(--border)] bg-[var(--surface)]/50 text-left hover:border-[var(--primary)]/30 transition-colors">
                 <div className="font-bold text-base">{b.city}<span className="text-xs text-[var(--foreground)]/40 ml-1.5 font-normal">{b.country}</span></div>
                 <div className="text-xs text-[var(--foreground)]/50 mt-1.5 leading-relaxed">{b.address}</div>
-                {b.phone && <div className="text-xs text-[var(--accent)] mt-1">{b.phone}</div>}
+                {b.phone && <div className="text-xs text-[var(--accent)] mt-1.5 pt-1.5 border-t border-[var(--border)]">{b.phone}</div>}
               </div>
             ))}
           </div>

@@ -6,5 +6,5 @@ export default async function ContactPage({ params }: { params: Promise<{ lang: 
   const { lang } = await params
   if (!hasLocale(lang)) notFound()
   const dict = await getDictionary(lang as Locale)
-  return <ContactForm dict={dict} />
+  return <ContactForm dict={dict} locale={lang} />
 }

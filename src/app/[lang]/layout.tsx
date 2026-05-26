@@ -47,7 +47,7 @@ export default async function LocaleLayout({
           brandName={brandName}
         />
         <main className="flex-1 relative z-10">{children}</main>
-        <Footer dict={dict} brandName={brandName} />
+        <Footer dict={dict} brandName={brandName} locale={lang} />
         <ClientLayout
           greeting={dict.aiPet.greeting}
           placeholder={dict.aiPet.placeholder}
