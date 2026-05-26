@@ -8,13 +8,13 @@ import Link from 'next/link'
 const iconMap: Record<string, React.ElementType> = { Search, Bot, Workflow, Server }
 
 interface Props {
-  lang: string
+  lang: string; locale: string
   dict: { pages: { servicesSubtitle: string }; nav: { services: string }; common: { getStarted: string } }
   initial: ServiceItem[]
 }
 
-export default function ServicesContent({ lang, dict, initial }: Props) {
-  const { content } = useLiveContent<{ services: ServiceItem[] }>('zh-CN', 'services', null)
+export default function ServicesContent({ lang, locale, dict, initial }: Props) {
+  const { content } = useLiveContent<{ services: ServiceItem[] }>(locale, 'services', null)
   const services = (content as { services?: ServiceItem[] } | null)?.services || initial
 
   return (

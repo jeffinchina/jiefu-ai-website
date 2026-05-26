@@ -33,8 +33,13 @@ export default function ContactForm({ dict, locale }: Props) {
               <p className="text-sm text-[var(--foreground)]/50"><LiveBrand locale={locale} field="email" fallback="contact@lmrun.com" /></p>
             </div>
             <div className="p-6 rounded-2xl border border-[var(--border)] bg-[var(--surface)]/50">
-              <div className="flex items-center gap-3 mb-4"><MessageCircle size={20} className="text-[var(--accent)]" /><h3 className="font-semibold">{d.pages.contactWechatLabel}</h3></div>
-              <p className="text-sm text-[var(--foreground)]/50">{d.pages.contactWechatHint}</p>
+              <div className="flex items-center gap-3 mb-2"><MessageCircle size={20} className="text-[var(--accent)]" /><h3 className="font-semibold">{d.pages.contactWechatLabel}</h3></div>
+              <div className="flex items-center gap-4">
+                <div className="flex-1">
+                  <LiveBrand locale={locale} field="wechat" fallback={d.pages.contactWechatHint} className="text-sm text-[var(--foreground)]/50" />
+                </div>
+                <LiveBrandQR locale={locale} />
+              </div>
             </div>
             <div className="p-6 rounded-2xl border border-[var(--border)] bg-[var(--surface)]/50">
               <h3 className="font-semibold mb-2">{d.pages.contactRegionsLabel}</h3>

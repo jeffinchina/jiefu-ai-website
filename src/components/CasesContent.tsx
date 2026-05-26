@@ -6,10 +6,11 @@ import type { CaseStudy } from '@/lib/content'
 interface Props {
   dict: { pages: { casesSubtitle: string }; nav: { cases: string } }
   initial: CaseStudy[]
+  locale: string
 }
 
-export default function CasesContent({ dict, initial }: Props) {
-  const { content } = useLiveContent<{ cases: CaseStudy[] }>('zh-CN', 'cases', null)
+export default function CasesContent({ dict, initial, locale }: Props) {
+  const { content } = useLiveContent<{ cases: CaseStudy[] }>(locale, 'cases', null)
   const cases = content?.cases || initial
 
   return (

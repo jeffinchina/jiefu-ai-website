@@ -29,10 +29,10 @@ export default function AboutContent({ locale, dict, initialTeam, initialBranche
           <h2 className="text-2xl font-bold mb-8 text-center">{dict.pages.aboutBranches}</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
             {branches.map((b) => (
-              <div key={b.city} className="p-4 rounded-xl border border-[var(--border)] bg-[var(--surface)]/50 text-left hover:border-[var(--primary)]/30 transition-colors">
+              <div key={b.city} className="p-4 rounded-xl border border-[var(--border)] bg-[var(--surface)]/50 text-left hover:border-[var(--primary)]/30 transition-colors flex flex-col h-full">
                 <div className="font-bold text-base">{b.city}<span className="text-xs text-[var(--foreground)]/40 ml-1.5 font-normal">{b.country}</span></div>
-                <div className="text-xs text-[var(--foreground)]/50 mt-1.5 leading-relaxed">{b.address}</div>
-                {b.phone && <div className="text-xs text-[var(--accent)] mt-1.5 pt-1.5 border-t border-[var(--border)]">{b.phone}</div>}
+                <div className="text-xs text-[var(--foreground)]/50 mt-1.5 leading-relaxed flex-1">{b.address}</div>
+                {b.phone && <div className="text-xs text-[var(--accent)] mt-2 pt-2 border-t border-[var(--border)]">{b.phone}</div>}
               </div>
             ))}
           </div>

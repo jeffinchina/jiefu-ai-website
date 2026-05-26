@@ -253,6 +253,15 @@ function EditorView({ tabKey, content, section, onSave, saving }: {
       <div><label className={lbl}>英文品牌名</label><input value={brand.nameEn||''} onChange={e => upd(['brand','nameEn'], e.target.value)} className={cls}/></div>
       <div><label className={lbl}>邮箱</label><input value={brand.email||''} onChange={e => upd(['brand','email'], e.target.value)} className={cls}/></div>
       <div><label className={lbl}>微信</label><input value={brand.wechat||''} onChange={e => upd(['brand','wechat'], e.target.value)} className={cls}/></div>
+      <div><label className={lbl}>微信二维码</label>
+        <div className="flex items-center gap-3">
+          {(brand as Record<string,string>).qrcode ? <img src={(brand as Record<string,string>).qrcode} className="w-16 h-16 object-contain rounded-lg border border-[var(--border)]" /> : <div className="w-16 h-16 rounded-lg border border-[var(--border)] flex items-center justify-center text-[var(--foreground)]/20"><Upload size={20}/></div>}
+          <label className="text-xs text-[var(--accent)] hover:underline cursor-pointer">
+            上传二维码图片
+            <input type="file" accept="image/*" className="hidden" onChange={e => { const f=e.target.files?.[0]; if(!f){return}; const r=new FileReader(); r.onload=()=>upd(['brand','qrcode'],r.result as string); r.readAsDataURL(f) }} />
+          </label>
+        </div>
+      </div>
       <div><label className={lbl}>中文 Slogan</label><input value={brand.slogan||''} onChange={e => upd(['brand','slogan'], e.target.value)} className={cls}/></div>
       <div><label className={lbl}>英文 Slogan</label><input value={brand.sloganEn||''} onChange={e => upd(['brand','sloganEn'], e.target.value)} className={cls}/></div>
       {SaveBtn}

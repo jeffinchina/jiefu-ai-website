@@ -32,7 +32,7 @@ export default function Footer({ dict, brandName, locale }: FooterProps) {
           </div>
         </div>
         <div className="mt-8 pt-8 border-t border-[var(--border)] text-center text-sm text-[var(--foreground)]/30">
-          {dict.footer.copyright}
+          © 2026 {brandName}. All rights reserved.
         </div>
       </div>
     </footer>

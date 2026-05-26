@@ -9,7 +9,7 @@ export default async function CasesPage({ params }: { params: Promise<{ lang: st
   const locale = lang as Locale
   const dict = await getDictionary(locale)
   const initial = getCaseStudies(locale)
-  return <CasesContent dict={{
+  return <CasesContent locale={lang} dict={{
     pages: { casesSubtitle: dict.pages.casesSubtitle },
     nav: { cases: dict.nav.cases },
   }} initial={initial} />
