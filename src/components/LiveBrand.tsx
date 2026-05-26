@@ -14,5 +14,5 @@ export function LiveBrandQR({ locale }: { locale: string }) {
   const { content } = useLiveContent<BrandData>(locale, 'common', null)
   const qrcode = content?.brand?.qrcode
   if (!qrcode) return null
-  return <img src={qrcode} alt="WeChat QR" className="h-24 w-24 object-contain rounded-lg border border-[var(--border)]" />
+  return <img src={qrcode} alt="WeChat QR" className="h-full max-h-28 w-auto object-contain rounded-lg border border-[var(--border)]" />
 }

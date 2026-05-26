@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { Globe, Menu, X } from 'lucide-react'
 import type { Locale } from '@/lib/dictionaries'
@@ -18,6 +19,14 @@ const navKeys = ['home', 'about', 'services', 'cases', 'hardware', 'contact']
 
 export default function Navbar({ locale, dict, brandName }: NavbarProps) {
   const [mobileOpen, setMobileOpen] = useState(false)
+  const pathname = usePathname()
+
+  // Determine active nav key from pathname
+  function isActive(key: string): boolean {
+    if (!pathname) return false
+    if (key === 'home') return pathname === `/${locale}` || pathname === `/${locale}/`
+    return pathname.startsWith(`/${locale}/${key}`)
+  }
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-[var(--surface)]/80 backdrop-blur-xl border-b border-[var(--border)]">
@@ -40,7 +49,7 @@ export default function Navbar({ locale, dict, brandName }: NavbarProps) {
               <Link
                 key={key}
                 href={`/${locale}${key === 'home' ? '' : `/${key}`}`}
-                className="px-3 py-2 text-sm text-[var(--foreground)]/70 hover:text-[var(--foreground)] rounded-lg hover:bg-white/5 transition-colors"
+                className={`px-3 py-2 text-sm rounded-lg transition-colors ${isActive(key) ? 'bg-[var(--primary)]/15 text-[var(--foreground)]' : 'text-[var(--foreground)]/70 hover:text-[var(--foreground)] hover:bg-white/5'}`}
               >
                 {dict.nav[key]}
               </Link>
@@ -66,7 +75,7 @@ export default function Navbar({ locale, dict, brandName }: NavbarProps) {
               <Link
                 key={key}
                 href={`/${locale}${key === 'home' ? '' : `/${key}`}`}
-                className="block px-3 py-2.5 text-sm text-[var(--foreground)]/70 hover:text-[var(--foreground)] rounded-lg hover:bg-white/5 transition-colors"
+                className={`block px-3 py-2.5 text-sm rounded-lg transition-colors ${isActive(key) ? 'bg-[var(--primary)]/15 text-[var(--foreground)]' : 'text-[var(--foreground)]/70 hover:text-[var(--foreground)] hover:bg-white/5'}`}
                 onClick={() => setMobileOpen(false)}
               >
                 {dict.nav[key]}

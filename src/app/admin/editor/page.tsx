@@ -256,10 +256,13 @@ function EditorView({ tabKey, content, section, onSave, saving }: {
       <div><label className={lbl}>微信二维码</label>
         <div className="flex items-center gap-3">
           {(brand as Record<string,string>).qrcode ? <img src={(brand as Record<string,string>).qrcode} className="w-16 h-16 object-contain rounded-lg border border-[var(--border)]" /> : <div className="w-16 h-16 rounded-lg border border-[var(--border)] flex items-center justify-center text-[var(--foreground)]/20"><Upload size={20}/></div>}
-          <label className="text-xs text-[var(--accent)] hover:underline cursor-pointer">
-            上传二维码图片
-            <input type="file" accept="image/*" className="hidden" onChange={e => { const f=e.target.files?.[0]; if(!f){return}; const r=new FileReader(); r.onload=()=>upd(['brand','qrcode'],r.result as string); r.readAsDataURL(f) }} />
-          </label>
+          <div className="flex flex-col gap-1">
+            <label className="text-xs text-[var(--accent)] hover:underline cursor-pointer">
+              {(brand as Record<string,string>).qrcode ? '重新上传' : '上传二维码图片'}
+              <input type="file" accept="image/*" className="hidden" onChange={e => { const f=e.target.files?.[0]; if(!f){return}; const r=new FileReader(); r.onload=()=>upd(['brand','qrcode'],r.result as string); r.readAsDataURL(f) }} />
+            </label>
+            {(brand as Record<string,string>).qrcode && <button onClick={() => upd(['brand','qrcode'], '')} className="text-xs text-red-400 hover:underline text-left">删除图片</button>}
+          </div>
         </div>
       </div>
       <div><label className={lbl}>中文 Slogan</label><input value={brand.slogan||''} onChange={e => upd(['brand','slogan'], e.target.value)} className={cls}/></div>
