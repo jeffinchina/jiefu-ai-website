@@ -1,1 +1,17 @@
-{"leads":[]}
+{
+  "leads": [
+    {
+      "id": "lead-1779871054578",
+      "seq": 1,
+      "name": "张三",
+      "company": "姐夫",
+      "email": "555@162.com",
+      "requirements": "我想测试",
+      "source": "website",
+      "status": "new",
+      "notes": "",
+      "createdAt": "2026-05-27T08:37:34.578Z",
+      "updatedAt": "2026-05-27T08:37:34.578Z"
+    }
+  ]
+}
