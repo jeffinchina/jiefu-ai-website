@@ -12,10 +12,27 @@ export default function ContactForm({ dict, locale }: Props) {
   const [form, setForm] = useState({ name: '', company: '', email: '', message: '' })
   const [sent, setSent] = useState(false)
 
-  function handleSubmit(e: React.FormEvent) {
+  const [submitting, setSubmitting] = useState(false)
+  const [submitError, setSubmitError] = useState('')
+
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
-    console.log('Contact form:', form)
-    setSent(true)
+    setSubmitting(true)
+    setSubmitError('')
+    try {
+      const res = await fetch('/api/leads-submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: form.name, company: form.company, email: form.email, message: form.message }),
+      })
+      const data = await res.json()
+      if (res.ok) setSent(true)
+      else setSubmitError(data.error || '提交失败，请重试')
+    } catch {
+      setSubmitError('网络错误，请稍后重试')
+    } finally {
+      setSubmitting(false)
+    }
   }
 
   return (
@@ -58,7 +75,8 @@ export default function ContactForm({ dict, locale }: Props) {
                 <div><label className="block text-sm font-medium mb-1.5">{d.pages.contactCompany}</label><input value={form.company} onChange={(e) => setForm({ ...form, company: e.target.value })} className="w-full px-4 py-2.5 rounded-xl bg-[var(--surface)] border border-[var(--border)] text-sm focus:outline-none focus:border-[var(--primary)] transition-colors" /></div>
                 <div><label className="block text-sm font-medium mb-1.5">{d.pages.contactEmail}</label><input required type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className="w-full px-4 py-2.5 rounded-xl bg-[var(--surface)] border border-[var(--border)] text-sm focus:outline-none focus:border-[var(--primary)] transition-colors" /></div>
                 <div><label className="block text-sm font-medium mb-1.5">{d.pages.contactMessage}</label><textarea required rows={4} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} className="w-full px-4 py-2.5 rounded-xl bg-[var(--surface)] border border-[var(--border)] text-sm focus:outline-none focus:border-[var(--primary)] transition-colors resize-none" /></div>
-                <button type="submit" className="w-full py-3 rounded-xl bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white font-medium hover:opacity-90 transition-opacity flex items-center justify-center gap-2"><Send size={16} /><span>{d.pages.contactSend}</span></button>
+                {submitError && <p className="text-sm text-red-400 mb-2">{submitError}</p>}
+                <button type="submit" disabled={submitting} className="w-full py-3 rounded-xl bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-white font-medium hover:opacity-90 transition-opacity flex items-center justify-center gap-2 disabled:opacity-50"><Send size={16} /><span>{submitting ? '提交中...' : d.pages.contactSend}</span></button>
               </form>
             )}
           </div>

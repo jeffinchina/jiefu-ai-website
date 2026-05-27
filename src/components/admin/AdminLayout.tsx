@@ -7,6 +7,7 @@ import Link from 'next/link'
 const navItems = [
   { href: '/admin/dashboard', label: '仪表盘', icon: BarChart3 },
   { href: '/admin/editor', label: '内容编辑', icon: FileText },
+  { href: '/admin/leads', label: '用户跟踪', icon: Users },
 ]
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
